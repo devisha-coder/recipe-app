@@ -1,10 +1,12 @@
+const dns = require("dns");
+dns.setServers(["8.8.8.8", "1.1.1.1"]);
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const path = require("path");
 require("dotenv").config();
 
-const recipeRoutes = require("./routes/recipeRoutes");
+const recipeRoutes = require("./routes/RecipeRoutes");
 const authRoutes = require("./routes/authRoutes");
 
 const app = express();

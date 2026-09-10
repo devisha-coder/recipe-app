@@ -3,7 +3,7 @@ import axios from "axios";
 import "./App.css";
 import Login from "./Login.jsx";
 
-const API_URL = "http://localhost:5000/api/recipes";
+const API_URL = "https://recipe-app-q8bi.onrender.com/api/recipes";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(
@@ -384,7 +384,7 @@ const toggleFavorite = (recipeId) => {
                  <div className="recipe-image">
   {recipe.image ? (
     <img
-      src={`http://localhost:5000/uploads/${recipe.image}`}
+      src={`https://recipe-app-q8bi.onrender.com/uploads/${recipe.image}`}
       alt={recipe.title}
     />
   ) : (

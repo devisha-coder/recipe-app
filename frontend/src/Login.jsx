@@ -13,7 +13,7 @@ function Login({ onLogin }) {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/auth/login",
+        "https://recipe-app-q8bi.onrender.com/api/auth/login",
         {
           email,
           password,
@@ -26,15 +26,23 @@ function Login({ onLogin }) {
       onLogin();
 
     } catch (error) {
-      alert(error.response?.data?.message || "Login failed");
-    }
+  console.log("LOGIN ERROR:", error);
+  console.log("STATUS:", error.response?.status);
+  console.log("DATA:", error.response?.data);
+
+  alert(
+    error.response?.data?.message ||
+    error.message ||
+    "Login failed"
+  );
+}
   };
     const handleRegister = async (e) => {
     e.preventDefault();
 
     try {
       await axios.post(
-        "http://localhost:5000/api/auth/register",
+        "https://recipe-app-q8bi.onrender.com/api/auth/register",
         {
           name,
           email,
