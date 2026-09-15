@@ -3,7 +3,7 @@ import axios from "axios";
 import "./App.css";
 import Login from "./Login.jsx";
 
-const API_URL = "https://recipe-app-q8bi.onrender.com/api/recipes";
+const  API_URL = "http://localhost:5000/api/recipes";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(
@@ -105,6 +105,8 @@ useEffect(() => {
     });
 
     getRecipes();
+
+    alert("Recipe saved successfully! 🎉");
 
   } catch (error) {
     console.log("FULL ERROR:", error.response?.data || error);
@@ -384,7 +386,7 @@ const toggleFavorite = (recipeId) => {
                  <div className="recipe-image">
   {recipe.image ? (
     <img
-      src={`https://recipe-app-q8bi.onrender.com/uploads/${recipe.image}`}
+      src={recipe.image}
       alt={recipe.title}
     />
   ) : (

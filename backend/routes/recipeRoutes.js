@@ -106,5 +106,11 @@ router.delete("/:id", authMiddleware, async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 });
+router.use((error, req, res, next) => {
+  console.log("UPLOAD ERROR:", error);
+  res.status(500).json({
+    message: error.message || "Upload error"
+  });
+});
 
 module.exports = router;
