@@ -6,7 +6,7 @@ const cors = require("cors");
 const path = require("path");
 require("dotenv").config();
 
-const recipeRoutes = require("./routes/RecipeRoutes");
+const recipeRoutes = require("./routes/recipeRoutes");
 const authRoutes = require("./routes/authRoutes");
 
 const app = express();
